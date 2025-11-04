@@ -85,7 +85,7 @@ const shoes = [
         brand: "ASICS",
         category: "Zapatillas",
         type: "running",
-        Rating: 4.2,
+        rating: 4.2,
         numRates: 20
     },
     {
@@ -108,7 +108,7 @@ const shoes = [
         brand: "NNORMAL",
         category: "Zapatillas",
         type: "trail",
-        Rating: 3.8,
+        rating: 3.8,
         numRates: 10
     },
     {
@@ -131,7 +131,7 @@ const shoes = [
         brand: "NEW BALANCE",
         category: "Zapatillas",
         type: "running",
-        Rating: 3.0,
+        rating: 3.0,
         numRates: 50
     },
     {
@@ -154,7 +154,7 @@ const shoes = [
         brand: "HOKA",
         category: "Zapatillas",
         type: "trail",
-        Rating: 5.0,
+        rating: 5.0,
         numRates: 75
     },
     {
@@ -174,10 +174,10 @@ const shoes = [
             { objectPosition: "center", scale: 0.8 },
         ],
         stock: 45,
-        brand: "La Sportiva",
+        brand: "LA SPORTIVA",
         category: "Zapatillas",
         type: "trail",
-        Rating: 4.6,
+        rating: 4.6,
         numRates: 30
     }
 
@@ -290,8 +290,8 @@ const clothing = [
         offerPrice: null,
         description: "Camiseta de algodón para uso diario THE NORTH FACE.",
         images: [
-            "/images/TNF/classic-tee/front.avif",
-            "/images/TNF/classic-tee/detail.avif"
+            "/images/THE_NORTH_FACE/classic-tee/front.avif",
+            "/images/THE_NORTH_FACE/classic-tee/detail.avif"
         ],
         imageStyle: [
             { objectPosition: "center", scale: 1 },

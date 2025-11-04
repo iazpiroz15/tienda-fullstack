@@ -13,6 +13,11 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category === selectedCategory ? '' : category);
+  }
 
  useEffect(() => {
     const verifyAuth = async () => {
@@ -51,8 +56,11 @@ export default function App() {
               <>
               <TopNavbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onCartClick={toggleCart} />
               <CartSidebar isOpen={isCartOpen} onClose={toggleCart} />
-                <CategoryNavbar />
-                <ProductList searchTerm={searchTerm} />
+                <CategoryNavbar 
+                onCategorySelect={handleCategorySelect}
+                activeCategory={selectedCategory}
+                />
+                <ProductList searchTerm={searchTerm} selectedCategory={selectedCategory} />
                 </>
             ) : (
               <Navigate to="/login" replace />

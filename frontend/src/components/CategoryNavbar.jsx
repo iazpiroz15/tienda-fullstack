@@ -3,7 +3,7 @@ const categories = ["Ofertas", "Zapatillas", "Ropa", "Accesorios"];
 
 export default function CategoryNavbar() {
   return (
-    <div className="bg-amber-100 border-b">
+    <div className="bg-amber-100 ">
       <div className="flex justify-center gap-6 py-3">
         {categories.map((cat) => (
           <button

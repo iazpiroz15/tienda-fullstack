@@ -33,5 +33,10 @@ export async function logout() {
     method: "POST",
     credentials: "include",
   });
+  
+  if (!res.ok) {
+    throw new Error("Error al cerrar sesión");
+  }
+
   return res.json();
 }

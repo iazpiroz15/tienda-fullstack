@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../api/auth";
-
+import { Eye, EyeOff } from "lucide-react"
+import logo from "../assets/shop-logo-banner.png";
 
 export default function Login({ setIsAuthenticated }) {
     const navigate = useNavigate();
@@ -24,11 +25,18 @@ export default function Login({ setIsAuthenticated }) {
         }
     }
 
-    return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+ return (
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <div className="flex flex-col items-center mb-0 transform -translate-y-24"> 
+            <img 
+                src={logo} 
+                alt="Logo" 
+                className="mx-auto mb-6 w-96 h-80 object-contain" 
+            />
+
             <form
                 onSubmit={handleSubmit}
-                className="bg-white p-8 rounded-2xl shadow-md w-96"
+                className="bg-white p-8 rounded-2xl shadow-md w-96 -translate-y-24"
             >
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
                     Iniciar Sesión
@@ -55,20 +63,23 @@ export default function Login({ setIsAuthenticated }) {
                     <label className="block text-gray-700 text-sm font-semibold mb-2">
                         Contraseña
                     </label>
+                    <div className="relative">
                     <input
                         type={showPassword ? "text" : "password"}
-                        className="border p-2 w-full rounded"
+className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
+                        placeholder="Introduce tu contraseña"
                     />
                     <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
                         className="absolute right-2 top-2 text-gray-500"
                     >
-                        {showPassword ? "🙈" : "👁️"}
+                        {showPassword ? <EyeOff size={20}/> : <Eye size={20}/>}
                     </button>
+                    </div>
                 </div>
 
                 <button
@@ -85,6 +96,7 @@ export default function Login({ setIsAuthenticated }) {
                     </a>
                 </p>
             </form>
+            </div>
         </div>
     );
 

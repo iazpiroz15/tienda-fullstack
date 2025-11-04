@@ -12,6 +12,7 @@ const { query } = req.query;
           $or: [
             { name: { $regex: query, $options: "i" } },
             { brand: { $regex: query, $options: "i" } },
+            { category: { $regex: query, $options: "i" } },
             { type: { $regex: query, $options: "i" } }
           ]
         }

@@ -18,7 +18,7 @@ const user = [
     }
 ]
 
-const products = [
+const shoes = [
     {
         name: "Speedgoat 6",
         price: 139.99,
@@ -31,12 +31,13 @@ const products = [
             "/images/HOKA/Speedgoat/side.avif"
         ],
         imageStyle: [
-            {objectPosition: "center", scale: 1},
-            {objectPosition: "center", scale: 0.5},
-            {objectPosition: "center", scale: 0.5},
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 0.5 },
+            { objectPosition: "center", scale: 0.5 },
         ],
         stock: 50,
         brand: "HOKA",
+        category: "Zapatillas",
         type: "trail",
         rating: 4.5,
         numRates: 120
@@ -52,13 +53,14 @@ const products = [
             "/images/ADIDAS/ultraboost/sole.avif",
             "/images/ADIDAS/ultraboost/side.avif"
         ],
-         imageStyle: [
-            {objectPosition: "center", scale: 1},
-            {objectPosition: "center", scale: 0.3},
-            {objectPosition: "center", scale: 0.3},
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 0.3 },
+            { objectPosition: "center", scale: 0.3 },
         ],
         stock: 75,
         brand: "ADIDAS",
+        category: "Zapatillas",
         type: "running",
         rating: 2.7,
         numRates: 85
@@ -74,13 +76,14 @@ const products = [
             "/images/ASICS/gel-kayano/sole.avif",
             "/images/ASICS/gel-kayano/side.avif"
         ],
-         imageStyle: [
-            {objectPosition: "center", scale: 1},
-            {objectPosition: "center", scale: 0.8},
-            {objectPosition: "center", scale: 0.8},
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 0.8 },
+            { objectPosition: "center", scale: 0.8 },
         ],
         stock: 60,
         brand: "ASICS",
+        category: "Zapatillas",
         type: "running",
         Rating: 4.2,
         numRates: 20
@@ -96,13 +99,14 @@ const products = [
             "/images/NNORMAL/TOMIR/sole.avif",
             "/images/NNORMAL/TOMIR/side.avif"
         ],
-         imageStyle: [
-            {objectPosition: "center", scale: 1},
-            {objectPosition: "center", scale: 0.8},
-            {objectPosition: "center", scale: 0.8},
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 0.8 },
+            { objectPosition: "center", scale: 0.8 },
         ],
         stock: 40,
         brand: "NNORMAL",
+        category: "Zapatillas",
         type: "trail",
         Rating: 3.8,
         numRates: 10
@@ -118,13 +122,14 @@ const products = [
             "/images/NEW_BALANCE/fresh-foam/sole.avif",
             "/images/NEW_BALANCE/fresh-foam/side.avif"
         ],
-         imageStyle: [
-            {objectPosition: "center", scale: 1},
-            {objectPosition: "center", scale: 0.8},
-            {objectPosition: "center", scale: 0.8},
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 0.8 },
+            { objectPosition: "center", scale: 0.8 },
         ],
         stock: 80,
         brand: "NEW BALANCE",
+        category: "Zapatillas",
         type: "running",
         Rating: 3.0,
         numRates: 50
@@ -140,13 +145,14 @@ const products = [
             "/images/HOKA/Challenger/sole.avif",
             "/images/HOKA/Challenger/side.avif"
         ],
-         imageStyle: [
-            {objectPosition: "center", scale: 1},
-            {objectPosition: "center", scale: 0.8},
-            {objectPosition: "center", scale: 0.8},
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 0.8 },
+            { objectPosition: "center", scale: 0.8 },
         ],
         stock: 55,
         brand: "HOKA",
+        category: "Zapatillas",
         type: "trail",
         Rating: 5.0,
         numRates: 75
@@ -162,13 +168,14 @@ const products = [
             "/images/SPORTIVA/ultra-raptor/sole.avif",
             "/images/SPORTIVA/ultra-raptor/side.avif"
         ],
-         imageStyle: [
-            {objectPosition: "center", scale: 1},
-            {objectPosition: "center", scale: 0.8},
-            {objectPosition: "center", scale: 0.8},
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 0.8 },
+            { objectPosition: "center", scale: 0.8 },
         ],
         stock: 45,
         brand: "La Sportiva",
+        category: "Zapatillas",
         type: "trail",
         Rating: 4.6,
         numRates: 30
@@ -177,11 +184,230 @@ const products = [
 
 ];
 
+const clothing = [
+    // ----------------------------------------------------
+    // CAMISETAS
+    // ----------------------------------------------------
+    {
+        name: "Better Sweater Fleece",
+        price: 99.00,
+        offer: true,
+        offerPrice: 79.00,
+        description: "Jersey polar cálido y sostenible PATAGONIA.",
+        images: [
+            "/images/PATAGONIA/better-sweater/front.avif",
+            "/images/PATAGONIA/better-sweater/back.avif",
+            "/images/PATAGONIA/better-sweater/detail.avif"
+        ],
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+        ],
+        stock: 45,
+        brand: "PATAGONIA",
+        category: "Jerseys",
+        type: "Fleece", 
+        rating: 4.8,
+        numRates: 210
+    },
+    {
+        name: "Alpha Grid Hoody",
+        price: 130.00,
+        offer: false,
+        offerPrice: null,
+        description: "Jersey técnico con Polartec Alpha para actividad intensa RAB.",
+        images: [
+            "/images/RAB/alpha-grid/front.avif",
+            "/images/RAB/alpha-grid/side.avif",
+            "/images/RAB/alpha-grid/detail.avif"
+        ],
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+        ],
+        stock: 30,
+        brand: "RAB",
+        category: "Jerseys",
+        type: "Técnico", 
+        rating: 4.6,
+        numRates: 95
+    },
+    // ----------------------------------------------------
+    // JERSEYS
+    // ----------------------------------------------------
+    {
+        name: "Dri-FIT Miler",
+        price: 35.00,
+        offer: false,
+        offerPrice: null,
+        description: "Camiseta técnica de running de secado rápido NIKE.",
+        images: [
+            "/images/NIKE/miler/front.avif",
+            "/images/NIKE/miler/back.avif",
+            "/images/NIKE/miler/detail.avif"
+        ],
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+        ],
+        stock: 90,
+        brand: "NIKE",
+        category: "Camisetas",
+        type: "Técnica",
+        rating: 4.3,
+        numRates: 150
+    },
+    {
+        name: "Capilene Cool Trail",
+        price: 49.00,
+        offer: true,
+        offerPrice: 39.00,
+        description: "Camiseta versátil de trail/senderismo PATAGONIA.",
+        images: [
+            "/images/PATAGONIA/capilene/front.avif",
+            "/images/PATAGONIA/capilene/back.avif",
+            "/images/PATAGONIA/capilene/detail.avif"
+        ],
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+        ],
+        stock: 65,
+        brand: "PATAGONIA",
+        category: "Camisetas",
+        type: "Trail",
+        rating: 4.7,
+        numRates: 110
+    },
+    {
+        name: "Classic Tee",
+        price: 25.00,
+        offer: false,
+        offerPrice: null,
+        description: "Camiseta de algodón para uso diario THE NORTH FACE.",
+        images: [
+            "/images/TNF/classic-tee/front.avif",
+            "/images/TNF/classic-tee/detail.avif"
+        ],
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+        ],
+        stock: 120,
+        brand: "THE NORTH FACE",
+        category: "Camisetas",
+        type: "Lifestyle",
+        rating: 4.0,
+        numRates: 55
+    },
+];
+
+const accessories = [
+    // ----------------------------------------------------
+    // MOCHILAS
+    // ----------------------------------------------------
+    {
+        name: "Nano Puff Vest",
+        price: 159.00,
+        offer: false,
+        offerPrice: null,
+        description: "Chaleco aislante ligero para climas fríos PATAGONIA.",
+        images: [
+            "/images/PATAGONIA/nano-puff-vest/front.avif",
+            "/images/PATAGONIA/nano-puff-vest/back.avif",
+            "/images/PATAGONIA/nano-puff-vest/detail.avif"
+        ],
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+        ],
+        stock: 35,
+        brand: "PATAGONIA",
+        category: "Accesorios",
+        type: "Chaleco", 
+        rating: 4.9,
+        numRates: 300
+    },
+    {
+        name: "Venture Backpack",
+        price: 90.00,
+        offer: true,
+        offerPrice: 75.00,
+        description: "Mochila versátil de 28L para uso diario y viajes ARC'TERYX.",
+        images: [
+            "/images/ARCTERYX/venture-backpack/front.avif",
+            "/images/ARCTERYX/venture-backpack/side.avif"
+        ],
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+        ],
+        stock: 50,
+        brand: "ARC'TERYX",
+        category: "Accesorios",
+        type: "Mochila",
+        rating: 4.5,
+        numRates: 180
+    },
+    // ----------------------------------------------------
+    // GORRAS Y BOTELLAS
+    // ----------------------------------------------------
+    {
+        name: "Trucker Hat",
+        price: 35.00,
+        offer: false,
+        offerPrice: null,
+        description: "Gorra trucker clásica con malla transpirable THE NORTH FACE.",
+        images: [
+            "/images/TNF/trucker-hat/front.avif",
+            "/images/TNF/trucker-hat/detail.avif"
+        ],
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+        ],
+        stock: 150,
+        brand: "THE NORTH FACE",
+        category: "Accesorios",
+        type: "Gorra",
+        rating: 4.2,
+        numRates: 80
+    },
+    {
+        name: "Hydro Flask 32oz Wide Mouth",
+        price: 44.95,
+        offer: false,
+        offerPrice: null,
+        description: "Botella termo de acero inoxidable con aislamiento HYDRO FLASK.",
+        images: [
+            "/images/HYDROFLASK/bottle/front.avif",
+            "/images/HYDROFLASK/bottle/top.avif"
+        ],
+        imageStyle: [
+            { objectPosition: "center", scale: 1 },
+            { objectPosition: "center", scale: 1 },
+        ],
+        stock: 100,
+        brand: "HYDRO FLASK",
+        category: "Accesorios",
+        type: "Hidratación",
+        rating: 4.7,
+        numRates: 250
+    },
+];
+
 async function seed() {
     await Product.deleteMany();
     await User.deleteMany();
     await User.insertMany(user);
-    await Product.insertMany(products);
+    await Product.insertMany(shoes);
+    await Product.insertMany(clothing);
+    await Product.insertMany(accessories);
     console.log("Productos insertados");
     mongoose.disconnect();
 }

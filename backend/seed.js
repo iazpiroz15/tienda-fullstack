@@ -10,11 +10,17 @@ mongoose.connect(process.env.MONGO_URI)
     .catch(err => console.error(err));
 
 const hashedPassword = await bcrypt.hash("admin123", 10);
-const user = [
+const hashedPassword2 = await bcrypt.hash("user", 10);
+const users = [
     {
         username: "admin",
         email: "admin@admin.com",
         password: hashedPassword
+    },
+     {
+        username: "user",
+        email: "user@user.com",
+        password: hashedPassword2
     }
 ]
 
@@ -195,9 +201,7 @@ const clothing = [
         offerPrice: 79.00,
         description: "Jersey polar cálido y sostenible PATAGONIA.",
         images: [
-            "/images/PATAGONIA/better-sweater/front.avif",
-            "/images/PATAGONIA/better-sweater/back.avif",
-            "/images/PATAGONIA/better-sweater/detail.avif"
+            "/images/PATAGONIA/better-sweater/front.webp",
         ],
         imageStyle: [
             { objectPosition: "center", scale: 1 },
@@ -218,9 +222,7 @@ const clothing = [
         offerPrice: null,
         description: "Jersey técnico con Polartec Alpha para actividad intensa RAB.",
         images: [
-            "/images/RAB/alpha-grid/front.avif",
-            "/images/RAB/alpha-grid/side.avif",
-            "/images/RAB/alpha-grid/detail.avif"
+            "/images/RAB/alpha-grid/front.png",
         ],
         imageStyle: [
             { objectPosition: "center", scale: 1 },
@@ -245,8 +247,7 @@ const clothing = [
         description: "Camiseta técnica de running de secado rápido NIKE.",
         images: [
             "/images/NIKE/miler/front.avif",
-            "/images/NIKE/miler/back.avif",
-            "/images/NIKE/miler/detail.avif"
+           
         ],
         imageStyle: [
             { objectPosition: "center", scale: 1 },
@@ -267,9 +268,7 @@ const clothing = [
         offerPrice: 39.00,
         description: "Camiseta versátil de trail/senderismo PATAGONIA.",
         images: [
-            "/images/PATAGONIA/capilene/front.avif",
-            "/images/PATAGONIA/capilene/back.avif",
-            "/images/PATAGONIA/capilene/detail.avif"
+            "/images/PATAGONIA/capilene/front.webp",
         ],
         imageStyle: [
             { objectPosition: "center", scale: 1 },
@@ -291,7 +290,6 @@ const clothing = [
         description: "Camiseta de algodón para uso diario THE NORTH FACE.",
         images: [
             "/images/THE_NORTH_FACE/classic-tee/front.avif",
-            "/images/THE_NORTH_FACE/classic-tee/detail.avif"
         ],
         imageStyle: [
             { objectPosition: "center", scale: 1 },
@@ -311,15 +309,14 @@ const accessories = [
     // MOCHILAS
     // ----------------------------------------------------
     {
-        name: "Nano Puff Vest",
+        name: "Fenix 8 pro",
         price: 159.00,
         offer: false,
         offerPrice: null,
-        description: "Chaleco aislante ligero para climas fríos PATAGONIA.",
+        description: "Reloj alta tecnología ideal para deporte y montaña.",
         images: [
-            "/images/PATAGONIA/nano-puff-vest/front.avif",
-            "/images/PATAGONIA/nano-puff-vest/back.avif",
-            "/images/PATAGONIA/nano-puff-vest/detail.avif"
+            "/images/GARMIN/fenix/front.webp",
+     
         ],
         imageStyle: [
             { objectPosition: "center", scale: 1 },
@@ -327,21 +324,21 @@ const accessories = [
             { objectPosition: "center", scale: 1 },
         ],
         stock: 35,
-        brand: "PATAGONIA",
+        brand: "GARMIN",
         category: "Accesorios",
-        type: "Chaleco", 
+        type: "Reloj", 
         rating: 4.9,
         numRates: 300
     },
     {
         name: "Venture Backpack",
-        price: 90.00,
+        price: 1290.00,
         offer: true,
-        offerPrice: 75.00,
+        offerPrice: 875.00,
         description: "Mochila versátil de 28L para uso diario y viajes ARC'TERYX.",
         images: [
-            "/images/ARCTERYX/venture-backpack/front.avif",
-            "/images/ARCTERYX/venture-backpack/side.avif"
+            "/images/ARCTERYX/venture-backpack/front.webp",
+            "/images/ARCTERYX/venture-backpack/side.webp"
         ],
         imageStyle: [
             { objectPosition: "center", scale: 1 },
@@ -364,8 +361,8 @@ const accessories = [
         offerPrice: null,
         description: "Gorra trucker clásica con malla transpirable THE NORTH FACE.",
         images: [
-            "/images/TNF/trucker-hat/front.avif",
-            "/images/TNF/trucker-hat/detail.avif"
+            "/images/THE_NORTH_FACE/trucker-hat/front.avif",
+            "/images/THE_NORTH_FACE/trucker-hat/side.avif"
         ],
         imageStyle: [
             { objectPosition: "center", scale: 1 },
@@ -385,8 +382,8 @@ const accessories = [
         offerPrice: null,
         description: "Botella termo de acero inoxidable con aislamiento HYDRO FLASK.",
         images: [
-            "/images/HYDROFLASK/bottle/front.avif",
-            "/images/HYDROFLASK/bottle/top.avif"
+            "/images/HYDROFLASK/bottle/front.jpg",
+            "/images/HYDROFLASK/bottle/side.jpg"
         ],
         imageStyle: [
             { objectPosition: "center", scale: 1 },
@@ -404,7 +401,7 @@ const accessories = [
 async function seed() {
     await Product.deleteMany();
     await User.deleteMany();
-    await User.insertMany(user);
+    await User.insertMany(users);
     await Product.insertMany(shoes);
     await Product.insertMany(clothing);
     await Product.insertMany(accessories);

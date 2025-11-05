@@ -5,42 +5,34 @@ const router = express.Router();
 
 //GET /api/products
 router.get("/", async (req, res) => {
-    // 1. Tomar los parámetros de consulta
-    const { query, category } = req.query; // 'category' es el nuevo filtro
+    const { query, category } = req.query;
 
     try{
         let filter = {};
         
-        // 2. Lógica de Filtrado por Categoría (la que solicitaste)
         if (category) {
             let categoriesToFind = [];
             
-            // Mapeo de la categoría del botón a las categorías de la base de datos
             switch (category.toLowerCase()) {
                 case "zapatillas":
                     categoriesToFind = ["Zapatillas"];
                     break;
                 case "ropa":
-                    // El usuario solicita que 'Ropa' filtre por Camiseta, Jersey y Accesorios.
-                    categoriesToFind = ["Camiseta", "Jersey", "Accesorios"]; 
+                    categoriesToFind = ["Camisetas", "Jerseys"]; 
                     break;
                 case "ofertas":
-                    // Filtra por el campo 'offer: true' y no por la categoría.
                     filter = { offer: true };
                     break;
                 case "accesorios":
-                    // Filtra por la categoría 'Accesorios'
                     categoriesToFind = ["Accesorios"]; 
                     break;
                 default:
-                    // Para cualquier otra categoría simple
                     categoriesToFind = [category];
                     break;
             }
             
-            // Si categoriesToFind tiene valores, usamos el operador $in para buscar múltiples coincidencias
+            // operador $in para buscar múltiples coincidencias
             if (categoriesToFind.length > 0) {
-                // Combinar con 'filter' si ya se ha establecido, como en el caso de 'Ofertas'
                 filter = { ...filter, category: { $in: categoriesToFind } };
             }
         }
@@ -56,7 +48,7 @@ router.get("/", async (req, res) => {
                 ]
             };
             
-            // Si ya hay un filtro de categoría, los combinamos con $and
+            // Si ya hay un filtro de categoría, lo combina con $and
             if (Object.keys(filter).length > 0) {
                  filter = { $and: [filter, queryFilter] };
             } else {

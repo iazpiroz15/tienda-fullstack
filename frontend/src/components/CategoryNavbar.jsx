@@ -14,7 +14,7 @@ export default function CategoryNavbar({ onCategorySelect, activeCategory }) {
             key={cat}
             className={`font-medium transition 
                         ${activeCategory === getCategoryValue(cat)
-                            ? 'text-emerald-600 border-b-2 border-emerald-600' // Estilo activo
+                            ? 'text-emerald-600 border-b-2 border-emerald-600' 
                             : 'text-gray-700 hover:text-emerald-600'
                         }`}
             onClick={() => onCategorySelect(getCategoryValue(cat))} 

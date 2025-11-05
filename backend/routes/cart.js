@@ -13,7 +13,6 @@ router.get("/", verifyToken, async (req, res) => {
             await cart.save();
         }
         res.json(cart || { userId: req.user.id, products: [] });
-        console.log("Enviando carrito:", cart);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -47,7 +46,6 @@ router.post("/add", verifyToken, async (req, res) => {
         }
         await cart.save();
         await cart.populate("products.productId");
-        console.log("Carrito actualizado:", cart);
         res.status(200).json(cart);
     } catch (err) {
         res.status(500).json({ message: err.message });

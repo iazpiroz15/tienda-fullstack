@@ -6,7 +6,7 @@ import User from "../models/User.js";
 const router = express.Router();
 
 // Registro
-router.post("/register", async (req, res) => {
+/*router.post("/register", async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
@@ -21,7 +21,7 @@ router.post("/register", async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
-});
+});*/
 
 // Login
 router.post("/login", async (req, res) => {
@@ -41,7 +41,7 @@ router.post("/login", async (req, res) => {
       httpOnly: true,
       sameSite: "strict",
       secure: process.env.NODE_ENV === "production",
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 días
+      maxAge: 24 * 60 * 60 * 1000, // 1 día
     });
 
     res.json({ message: "Login exitoso", user: { id: user._id, username: user.username } });
